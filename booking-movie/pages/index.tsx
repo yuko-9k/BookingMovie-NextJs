@@ -1,8 +1,8 @@
-import Nav from './Components/NavBar'
+import HomeTemplate from './home'
 export default function Home() {
   return (
     <div className='main'>
-      <Nav/>
+      <HomeTemplate/>
     </div>
   )
 }
