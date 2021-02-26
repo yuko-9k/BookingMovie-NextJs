@@ -1,1 +1,20 @@
-@import './Base/reset.scss';
+//Helper
+@import'./Helpers/variables';
+@import'./Helpers/mixin';
+@import'./Helpers/extend';
+//vendor
+//Base
+@import'./Base/reset';
+@import'./Base/normalized';
+//components
+@import'./Layout/header';
+// @import'./Layout/carousel_movie';
+// @import'./Layout/cinema_block';
+// @import'./Layout/tix_news';
+// @import'./Layout/schedule';
+// @import'./Layout/footer';
+// @import'./Layout/app';
+// @import'./Layout/backToTop';
+// //layouts
+// //Pages
+// //Theme
