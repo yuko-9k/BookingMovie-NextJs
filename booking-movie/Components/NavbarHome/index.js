@@ -4,20 +4,28 @@ import {useSelector,useDispatch} from 'react-redux';
 
 export default function Navbar() {
    const openNav = ()=>{
-        document.getElementById('mobile_menu_canvas').style.width ='30%',
-        document.getElementById("mobile_menu_canvas").style.opacity = "1",
-        document.getElementById("moblie_menu").style.right = "0"
+        document.getElementById('mobile_menu_canvas').style.width ='30%';
+        document.getElementById("mobile_menu_canvas").style.opacity = "1";
+        document.getElementById("moblie_menu").style.right = "0";
     }
    const closeNav=()=>{
         document.getElementById("moblie_menu").style.right = "-70%";
         document.getElementById("mobile_menu_canvas").style.opacity = "0";
         document.getElementById("mobile_menu_canvas").style.width = "0";
     }
+    const openModalLocation=()=>{
+        document.getElementById("modal-locaition").style.display="block";
+       let show = document.getElementsByClassName("modal-backdrop");
+        if(show.length<0){
+            show[0].style.display="block";
+        }
+    }
+    
     const location = useSelector(state=>state.LocationState.location);
     const renderListLocation = () =>{
         const listLocation = useSelector(state=>state.LocationState.listLocation);
         return listLocation.map((location)=>{
-           return <Location key={location.stt} location={location}/>
+           return <div onClick={closeNav} key={location.stt} ><Location  location={location}/></div> 
         });
     }
     return (
@@ -89,7 +97,7 @@ export default function Navbar() {
                         <a href="#app_tix" onClick={closeNav}>Ứng dụng</a>
                     </li>
                     <li>
-                        <a href="#" data-toggle="modal" data-target="#modal-locaition">{location.city}</a>
+                        <a href="#" data-toggle="modal" data-target="#modal-locaition" onClick={openModalLocation}>{location.city}</a>
                     </li>
                 </ul>
             </nav>
