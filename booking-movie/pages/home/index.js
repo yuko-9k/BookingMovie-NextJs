@@ -1,9 +1,9 @@
 import React from 'react'
-import NavbarHome from './../../Components/NavbarHome'
+import Home from '../../container/HomeTemplate'
 export default function HomeTemplate() {
     return (
         <div>
-            <NavbarHome/>
+            <Home/>
         </div>
     )
 }
